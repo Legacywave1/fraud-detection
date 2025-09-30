@@ -2,7 +2,10 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load('/workspaces/fraud-detection/models/fraud_detection.pkl')
+
+
+
+model = joblib.load(/workspaces/fraud-detection/models/fraud_detection.pkl)
 
 st.title('Fraud Detection Prediction App')
 
@@ -17,16 +20,17 @@ newbalanceOrig = st.number_input('New Balance (sender)', min_value = 0.0, value 
 oldbalanceDest = st.number_input('Old Balance (Receiver)', min_value= 0.0, value = 0.0 )
 newbalanceDest = st.number_input('New Balace (Receiver)', min_value = 0.0, value = 0.0 )
 
-if st.buttion('Predict'):
-    input_data = pd.DataFrame({
+if st.button('Predict'):
+    input_data = pd.DataFrame([{
         'type': transaction_type,
         'amount' : amount,
         'oldbalanceOrg': oldbalanceOrg,
         'newbalanceOrig': newbalanceOrig,
         'oldbalanceDest': oldbalanceDest,
         'newbalanceDest': newbalanceDest
-    })
+    }])
     prediction = model.predict(input_data)[0]
+    probability = model.predict_proba(input_data)[0][1] if hasattr(model, 'predict_proba') else None
     st.subheader(f"Predition: '{int(prediction)}'")
 
     if prediction == 1:
