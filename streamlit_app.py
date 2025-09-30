@@ -5,7 +5,7 @@ import joblib
 
 
 
-model = joblib.load(/workspaces/fraud-detection/models/fraud_detection.pkl)
+model = joblib.load(/workspaces/fraud-detection/models/fraud_detection2.pkl)
 
 st.title('Fraud Detection Prediction App')
 
@@ -19,6 +19,9 @@ oldbalanceOrg = st.number_input('Old Balance (Sender)', min_value= 0.0, value = 
 newbalanceOrig = st.number_input('New Balance (sender)', min_value = 0.0, value = 9000.0)
 oldbalanceDest = st.number_input('Old Balance (Receiver)', min_value= 0.0, value = 0.0 )
 newbalanceDest = st.number_input('New Balace (Receiver)', min_value = 0.0, value = 0.0 )
+balanceDiffOrig = oldbalanceOrg - newbalanceOrig
+balanceDiffDest = oldbalanceDest - newbalanceDest
+
 
 if st.button('Predict'):
     input_data = pd.DataFrame([{
@@ -27,7 +30,9 @@ if st.button('Predict'):
         'oldbalanceOrg': oldbalanceOrg,
         'newbalanceOrig': newbalanceOrig,
         'oldbalanceDest': oldbalanceDest,
-        'newbalanceDest': newbalanceDest
+        'newbalanceDest': newbalanceDest,
+        'balanceDiffOrig': balanceDiffOrig,
+        'balanceDiffDest': balanceDiffDest
     }])
     prediction = model.predict(input_data)[0]
     probability = model.predict_proba(input_data)[0][1] if hasattr(model, 'predict_proba') else None

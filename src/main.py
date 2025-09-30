@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 
-model = joblib.load('models/fraud_detection.pkl')
+model = joblib.load('models/fraud_detection2.pkl')
 
 app = FastAPI()
 
