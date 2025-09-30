@@ -1,35 +1,19 @@
-import streamlit as st
-import pandas as pd
+from fastapi import FastAPI
 import joblib
+import pandas as pd
 
-model = joblib.load('/workspaces/fraud-detection/models/fraud_detection.pkl')
 
-st.title('Fraud Detection Prediction App')
+model = joblib.load('models/fraud_detection.pkl')
 
-st.markdown("Please enter the transaction details and use the predict button below")
+app = FastAPI()
 
-st.divider()
+@app.post('/predict')
 
-transaction_type = st.selectbox('Transaction Type', ['PAYMENT', 'TRANSFER', 'CASH_OUT','DEPOSIT'])
-amount = st.number_input('Amount', min_value=0.0, value = 1000.0)
-oldbalanceOrg = st.number_input('Old Balance (Sender)', min_value= 0.0, value = 10000.0)
-newbalanceOrig = st.number_input('New Balance (sender)', min_value = 0.0, value = 9000.0)
-oldbalanceDest = st.number_input('Old Balance (Receiver)', min_value= 0.0, value = 0.0 )
-newbalanceDest = st.number_input('New Balace (Receiver)', min_value = 0.0, value = 0.0 )
+def predict(features: dict):
+    df = pd.DataFrame([features])
 
-if st.buttion('Predict'):
-    input_data = pd.DataFrame({
-        'type': transaction_type,
-        'amount' : amount,
-        'oldbalanceOrg': oldbalanceOrg,
-        'newbalanceOrig': newbalanceOrig,
-        'oldbalanceDest': oldbalanceDest,
-        'newbalanceDest': newbalanceDest
-    })
-    prediction = model.predict(input_data)[0]
-    st.subheader(f"Predition: '{int(prediction)}'")
+    pred = model.predict(df)
 
-    if prediction == 1:
-        st.error('This transaction can be Fraud⚠')
-    else:
-        st.success('This transaction does not seem fraudulent.')
+    return {
+        'Fraud Prediction': int(pred[0])
+    }
