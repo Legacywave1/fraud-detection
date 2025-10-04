@@ -1,7 +1,7 @@
 # Fraud Detection App
 
 This is an End-to-end Machine Learning application to detect fraud in financial institutions. This is based on transaction type, amount of send, amount of receiver, etc.
-The process demonstrate a full Machine Learning Lifecycle from data collection, to preprocessing and modelling to deployment with an interactive User Interface.
+The process demonstrate a full Machine Learning Lifecycle from data collection, to preprocessing and using ADASYN for oversampling minority and modelling to deployment with an interactive User Interface.
 
 
 <img width="1424" height="788" alt="Fraud" src="https://github.com/user-attachments/assets/9a36a0d6-2221-4fdb-8bb6-a01a08ccc0c5" />
@@ -14,7 +14,7 @@ Fraud detection is a critical challenge in finance. Using transaction data, this
 
 ## Key highlights:
 
-* Data Preprocessing: Cleaning, encoding, scaling.
+* Data Preprocessing: Cleaning, encoding, scaling, and oversampling minority using ADASYN.
 * Model Training: Saved best model as fraud_detection.pkl.
 * Backend: FastAPI API for serving predictions.
 * Frontend: Streamlit app for user-friendly input.
@@ -91,15 +91,16 @@ Response:
 ---
 
 ## Deployment
-Backend (FastAPI) → [Render](https://fraud-detection-bg5u.onrender.com/docs)
-Frontend (Streamlit) → [Hugging Face](https://huggingface.co/spaces/Cyprian121/fraud-detection)
-🛠️ Tech Stack
-Python 3.12+
-Pandas, NumPy, Scikit-learn
-Joblib
-FastAPI (backend)
-Streamlit (frontend)
-Render (deployment)
+* Backend (FastAPI) → [Render](https://fraud-detection-bg5u.onrender.com/docs)
+* rontend (Streamlit) → [Hugging Face](https://huggingface.co/spaces/Cyprian121/fraud-detection)
+
+## Tech Stack
+* Python 3.12+
+* Pandas, Seaborn, Scikit-learn, Imbalance, Joblib
+* FastAPI (backend)
+* Streamlit (frontend)
+* Render (deployment)
+
 
 
 
