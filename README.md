@@ -27,7 +27,7 @@ Fraud detection is a critical challenge in finance. Using transaction data, this
 * Cloud-deployed and publicly accessible.
 
 ## Project Structure
-''' fraud-detection/
+```bash fraud-detection/
 │
 ├── data/                # Dataset(s) (excluded, too large for GitHub)
 ├── models/              # Trained model artifact (fraud_detection.pkl)
@@ -38,34 +38,34 @@ Fraud detection is a critical challenge in finance. Using transaction data, this
 ├── requirements.txt     # Dependencies
 ├── README.md            # Documentation
 └── .gitignore           # Ignore datasets, venv, etc.
-'''
+```
 
 ## How to Run Locally
 1. Clone the repo
-'''git clone https://github.com/Legacywave1/fraud-detection.git
+```bash git clone https://github.com/Legacywave1/fraud-detection.git
 cd fraud-detection
-'''
+```
 2. Create & activate virtual environment
-'''python -m venv venv
+```bash python -m venv venv
 source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
-'''
+```
 3. Install dependencies
-'''pip install -r requirements.txt'''
+```bash pip install -r requirements.txt```
 
 4. Start FastAPI backend
-'''uvicorn src.main:app --reload
-
-Open http://127.0.0.1:8000/docs to test the API.'''
+```bash uvicorn src.main:app --reload```
+   
+```bash Open http://127.0.0.1:8000/docs to test the API.```
 
 5. Start Streamlit frontend
-'''streamlit run streamlit_app.py'''
+```bash streamlit run streamlit_app.py```
 
 # Example API Usage
 
 POST /predict
 
-'''{
+```bash {
   "type": "TRANSFER",
   "amount": 1200.50,
   "oldbalanceOrg": 5000.00,
@@ -74,15 +74,20 @@ POST /predict
   "newbalanceDest": 2200.50
 }
 
-'''
+```
 Response:
 
-'''{
+```bash {
   "fraud_prediction": 1,
   "fraud_probability": 0.87
-}'''
+}
+```
 
-🌐 Deployment
+## Live Demo
+* FastAPI(Render): https://fraud-detection-bg5u.onrender.com/docs
+* Streamlit(Hugging Face Spaces): https://huggingface.co/spaces/Cyprian121/fraud-detection
+
+## Deployment
 Backend (FastAPI) → [Render](https://fraud-detection-bg5u.onrender.com/docs)
 Frontend (Streamlit) → [Hugging Face](https://huggingface.co/spaces/Cyprian121/fraud-detection)
 🛠️ Tech Stack
@@ -92,5 +97,6 @@ Joblib
 FastAPI (backend)
 Streamlit (frontend)
 Render (deployment)
+
 
 
