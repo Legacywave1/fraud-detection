@@ -1,6 +1,6 @@
 # Fraud Detection App
 
-This is an End-to-end Machine Learning application to detect fraud in financial institutions. This is based on transaction type, amount of send, amount of receiver, etc.
+This is an End-to-end Machine Learning application to detect fraud in financial institutions. This is based on transaction type, balance of sender, balance of receiver, etc.
 The process demonstrate a full Machine Learning Lifecycle from data collection, to preprocessing and using ADASYN for oversampling minority and modelling to deployment with an interactive User Interface.
 
 
@@ -18,7 +18,7 @@ Fraud detection is a critical challenge in finance. Using transaction data, this
 * Model Training: Saved best model as fraud_detection.pkl.
 * Backend: FastAPI API for serving predictions.
 * Frontend: Streamlit app for user-friendly input.
-* Deployment: Fully hosted on Render (backend).
+* Deployment: Fully hosted on Render and hugging face.
 
 ## Features
 * Interactive fraud prediction using transaction inputs.
@@ -100,6 +100,7 @@ Response:
 * FastAPI (backend)
 * Streamlit (frontend)
 * Render (deployment)
+
 
 
 
