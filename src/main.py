@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 import joblib
 import pandas as pd
+import os
 
+BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+model_path = os.path.join(BASE_PATH, 'models', 'fraud_detection.pkl')
 
-model = joblib.load('models/fraud_detection2.pkl')
-
+model = joblib.load(model_path)
 app = FastAPI()
 
 @app.post('/predict')
