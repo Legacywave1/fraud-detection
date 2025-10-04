@@ -91,8 +91,8 @@ Response:
 ---
 
 ## Deployment
-* Backend (FastAPI) → [Render](https://fraud-detection-bg5u.onrender.com/docs)
-* rontend (Streamlit) → [Hugging Face](https://huggingface.co/spaces/Cyprian121/fraud-detection)
+* Backend (FastAPI) → Render
+* Frontend (Streamlit) → Hugging Face
 
 ## Tech Stack
 * Python 3.12+
@@ -100,6 +100,7 @@ Response:
 * FastAPI (backend)
 * Streamlit (frontend)
 * Render (deployment)
+
 
 
 
