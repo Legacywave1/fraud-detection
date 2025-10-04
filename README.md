@@ -1,4 +1,4 @@
-# Fraud Detection
+# Fraud Detection App
 
 This is an End-to-end Machine Learning application to detect fraud in financial institutions. This is based on transaction type, amount of send, amount of receiver, etc.
 The process demonstrate a full Machine Learning Lifecycle from data collection, to preprocessing and modelling to deployment with an interactive User Interface.
@@ -42,9 +42,8 @@ Fraud detection is a critical challenge in finance. Using transaction data, this
 
 ## How to Run Locally
 1. Clone the repo
-```bash git clone https://github.com/Legacywave1/fraud-detection.git
-cd fraud-detection
-```
+```bash git clone https://github.com/Legacywave1/fraud-detection.git```
+```bash cd fraud-detection```
 2. Create & activate virtual environment
 ```bash python -m venv venv
 source venv/bin/activate   # Mac/Linux
@@ -60,6 +59,7 @@ venv\Scripts\activate      # Windows
 
 5. Start Streamlit frontend
 ```bash streamlit run streamlit_app.py```
+---
 
 # Example API Usage
 
@@ -82,10 +82,12 @@ Response:
   "fraud_probability": 0.87
 }
 ```
+---
 
 ## Live Demo
 * FastAPI(Render): https://fraud-detection-bg5u.onrender.com/docs
 * Streamlit(Hugging Face Spaces): https://huggingface.co/spaces/Cyprian121/fraud-detection
+* ---
 
 ## Deployment
 Backend (FastAPI) → [Render](https://fraud-detection-bg5u.onrender.com/docs)
@@ -97,6 +99,7 @@ Joblib
 FastAPI (backend)
 Streamlit (frontend)
 Render (deployment)
+
 
 
 
