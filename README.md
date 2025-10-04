@@ -39,7 +39,7 @@ Fraud detection is a critical challenge in finance. Using transaction data, this
 ├── README.md            # Documentation
 └── .gitignore           # Ignore datasets, venv, etc.
 ```
-
+---
 ## How to Run Locally
 1. Clone the repo
 ```bash git clone https://github.com/Legacywave1/fraud-detection.git```
@@ -87,7 +87,8 @@ Response:
 ## Live Demo
 * FastAPI(Render): https://fraud-detection-bg5u.onrender.com/docs
 * Streamlit(Hugging Face Spaces): https://huggingface.co/spaces/Cyprian121/fraud-detection
-* ---
+
+---
 
 ## Deployment
 Backend (FastAPI) → [Render](https://fraud-detection-bg5u.onrender.com/docs)
@@ -99,6 +100,7 @@ Joblib
 FastAPI (backend)
 Streamlit (frontend)
 Render (deployment)
+
 
 
 
