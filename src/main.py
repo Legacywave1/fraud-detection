@@ -13,6 +13,8 @@ app = FastAPI()
 
 def predict(features: dict):
     df = pd.DataFrame([features])
+    df['balanceDiffOrig'] = df['oldbalanceOrg'] - df['newbalanceOrig']
+    df['balanceDiffDest'] = df['newbalanceDest'] - df['oldbalanceDest']
 
     pred = model.predict(df)
 
