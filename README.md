@@ -65,7 +65,8 @@ venv\Scripts\activate      # Windows
 
 POST /predict
 
-```bash {
+```bash
+{
   "type": "TRANSFER",
   "amount": 1200.50,
   "oldbalanceOrg": 5000.00,
@@ -77,9 +78,9 @@ POST /predict
 ```
 Response:
 
-```bash {
-  "fraud_prediction": 1,
-  "fraud_probability": 0.87
+```bash
+{
+  "fraud_prediction": 0
 }
 ```
 ---
@@ -100,6 +101,7 @@ Response:
 * FastAPI (backend)
 * Streamlit (frontend)
 * Render (deployment)
+
 
 
 
