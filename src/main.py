@@ -17,6 +17,7 @@ def predict(features: dict):
     df['balanceDiffDest'] = df['newbalanceDest'] - df['oldbalanceDest']
 
     pred = model.predict(df)
+    prob = model.predict_proba(df)[0][1]
 
     return {
         'Fraud Prediction': int(pred[0])
