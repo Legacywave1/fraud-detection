@@ -20,5 +20,6 @@ def predict(features: dict):
     prob = model.predict_proba(df)[0][1]
 
     return {
-        'Fraud Prediction': int(pred[0])
+        'Fraud Prediction': int(pred[0]),
+        'Fraud probabilty': int(prob)
     }
