@@ -39,6 +39,7 @@ if st.button('Predict'):
     prediction = model.predict(input_data)[0]
     probability = model.predict_proba(input_data)[0][1] if hasattr(model, 'predict_proba') else None
     st.subheader(f"Predition: '{int(prediction)}'")
+    st.subheader(f"Prediction probability: '(int{probability})'")
 
     if prediction == 1:
         st.error('This transaction can be Fraud⚠')
